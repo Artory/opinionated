@@ -24,7 +24,7 @@ class Klass:
 
 def preserve_docstrings(a="test"):
     """Since this is a set style"""
-    """But a random string after isn't"""
+    """But a random string after isn't""" # comments
 
 def annotations(a: "test") -> "test":
     pass

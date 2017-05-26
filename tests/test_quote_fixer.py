@@ -1,5 +1,6 @@
-from lib2to3.tests.test_fixers import FixerTestCase
 import os
+
+from lib2to3.tests.test_fixers import FixerTestCase
 
 path = os.path.dirname(os.path.abspath(__file__))
 

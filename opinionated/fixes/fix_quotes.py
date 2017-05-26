@@ -56,9 +56,9 @@ def unescape(s, quote):
 def escape(s, quote):
     return s.replace(quote, BACKSLASH + quote)
 
-docstring_bearers = frozenset((syms.funcdef, syms.classdef, syms.file_input))
+DOCSTRING_HOLDERS = frozenset((syms.funcdef, syms.classdef, syms.file_input))
 def is_docstring(node):
-    top = next(filter(lambda i: i.type in docstring_bearers, attr_chain(node, 'parent')))
+    top = next(filter(lambda i: i.type in DOCSTRING_HOLDERS, attr_chain(node, 'parent')))
 
     if top.type == syms.file_input:
         return top.children[0].children[0] == node
@@ -98,6 +98,7 @@ class FixQuotes(fixer_base.BaseFix):
         original_value = node.value
         pfx, value = split_prefix(node.value)
         quote = get_quote(value)
+        # TODO: make quote compaction configurable
         target_quote = self.preferred_quote if '\n' not in node.value else (self.preferred_quote * 3)
         value = escape(
             unescape(unquote(value, quote), quote[0]),

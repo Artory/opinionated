@@ -26,7 +26,7 @@ with codecs.open('README.rst', 'r', 'utf-8') as fd:
   setup(
       name='opinionated',
       version=opinionated.__version__,
-      description='Opinionated formatter/normalizer for python code',
+      description='Opinionated code fixes',
       long_description=fd.read(),
       license='Apache License, Version 2.0',
       packages=['opinionated'],
