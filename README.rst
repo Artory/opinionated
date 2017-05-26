@@ -1,9 +1,11 @@
-# Opinionated fixers
+===========
+Opinionated
+===========
 
 - Quote fixer/normalizer
 
 Add the following section to your `setup.cfg`:
 
-```
-[quotalizer]
-```
+.. code-block::
+  [quotalizer]
+  preferred_quote = SINGLE
