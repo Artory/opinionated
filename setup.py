@@ -1,6 +1,6 @@
 import codecs
 import unittest
-from setuptools import setup, Command
+from setuptools import setup, Command, find_packages
 import sys
 
 import opinionated
@@ -29,7 +29,7 @@ with codecs.open('README.rst', 'r', 'utf-8') as fd:
       description='Opinionated code fixes',
       long_description=fd.read(),
       license='Apache License, Version 2.0',
-      packages=['opinionated'],
+      packages=find_packages(),
       classifiers=[
           'Development Status :: 1 - Alpha',
           'Environment :: Console',
