@@ -7,5 +7,6 @@ Opinionated
 Add the following section to your `setup.cfg`:
 
 .. code-block::
-  [quotalizer]
-  preferred_quote = SINGLE
+
+    [quotalizer]
+    preferred_quote = SINGLE
